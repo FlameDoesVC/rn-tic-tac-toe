@@ -62,7 +62,7 @@ export const CustomScoreProvider: React.FC<{ children: React.ReactNode }> = ({ c
   };
 
   const resetOScore = async () => {
-    setXScore(0);
+    setOScore(0);
     await AsyncStorage.setItem(O_SCORE_KEY, "0");
   };
 

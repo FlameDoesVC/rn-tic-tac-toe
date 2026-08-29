@@ -2,6 +2,16 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Screenshots
+
+| Gameplay (light) | Gameplay (dark) |
+| --- | --- |
+| ![O's turn, light mode](docs/screenshots/o-turn.jpg) | ![X wins, dark mode](docs/screenshots/x-won.jpg) |
+
+| Settings | Color picker |
+| --- | --- |
+| ![Settings page, dark mode](docs/screenshots/settings-dark-mode.jpg) | ![X/O color picker, dark mode](docs/screenshots/color-picker.jpg) |
+
 ## Get started
 
 1. Install dependencies
