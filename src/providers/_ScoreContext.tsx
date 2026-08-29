@@ -4,7 +4,7 @@ import { ActivityIndicator, View } from "react-native";
 
 
 const X_SCORE_KEY = '@app_x_score';
-const O_SCORE_KEY = '@app_x_score';
+const O_SCORE_KEY = '@app_o_score';
 
 interface ScoreContextProps {
   XScore: number;

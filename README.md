@@ -1,18 +1,8 @@
-# Welcome to your Expo app 👋
+# rn-tic-tac-toe
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A local two-player tic-tac-toe game built with [Expo](https://expo.dev) and React Native. Play a full game with win/tie detection, a persistent scoreboard, and a settings screen for dark mode and custom X/O colors.
 
-## Screenshots
-
-| Gameplay (light) | Gameplay (dark) |
-| --- | --- |
-| ![O's turn, light mode](docs/screenshots/o-turn.jpg) | ![X wins, dark mode](docs/screenshots/x-won.jpg) |
-
-| Settings | Color picker |
-| --- | --- |
-| ![Settings page, dark mode](docs/screenshots/settings-dark-mode.jpg) | ![X/O color picker, dark mode](docs/screenshots/color-picker.jpg) |
-
-## Get started
+## Installation & run instructions
 
 1. Install dependencies
 
@@ -26,41 +16,45 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. In the output, choose how to open it:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+   - `npm run android` for an Android emulator
+   - `npm run ios` for an iOS simulator
+   - `npm run web` for the browser
+   - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Features
 
-## Get a fresh project
+- Two-player tic-tac-toe, played locally on one device, with win and tie detection across rows, columns, and diagonals.
+- A scoreboard that persists across app restarts, so X/O win counts survive a relaunch.
+- Confirmation prompts before anything gets reset: tapping the board mid-game, or the "Reset Scoreboard" button in Settings, asks first.
+- A dark mode toggle in Settings. The status bar icon color follows it, instead of just the OS setting.
+- Custom X/O piece colors: pick from a preset palette, or type a hex code, from a color picker modal in Settings.
 
-When you're ready, run:
+## Screenshots
 
-```bash
-npm run reset-project
-```
+| Home, light mode | Home, dark mode (win) |
+| --- | --- |
+| ![O's turn, light mode](docs/screenshots/o-turn.jpg) | ![X wins, dark mode](docs/screenshots/x-won.jpg) |
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+| Settings | Color picker |
+| --- | --- |
+| ![Settings page, light mode](docs/screenshots/settings-light-mode.jpg) | ![X/O color picker, dark mode](docs/screenshots/color-picker.jpg) |
 
-### Other setup steps
+## Technologies used
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+- React Native 0.86 and React 19
+- Expo SDK 57
+- Expo Router for file-based navigation
+- React Navigation, underneath Expo Router's native stack
+- expo-status-bar, for the theme-aware status bar
+- @react-native-async-storage/async-storage, for persisting scores and settings
+- TypeScript
 
-## Learn more
+## Known issues / future improvements
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Only the standard 3x3 board is supported; there's no board-size or win-condition option.
+- No play against bot / single-player mode. Both players need to be on the same device.
+- The custom hex color field doesn't preview the color before you apply it.
+- No animation when a piece is placed, or when a game ends in a win or tie.
